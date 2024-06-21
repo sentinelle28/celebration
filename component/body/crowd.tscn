@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://0v2rsknv4e5n"]
+
+[ext_resource type="Script" path="res://component/body/crowd.gd" id="1_d4twi"]
+[ext_resource type="Texture2D" uid="uid://do1rc7abax1yv" path="res://icon.svg" id="1_k67xo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jn8d"]
+size = Vector2(129, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q20q0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k67xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="crowd" type="CharacterBody2D"]
+script = ExtResource("1_d4twi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_7jn8d")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 7.49999)
+scale = Vector2(1, 1.53906)
+sprite_frames = SubResource("SpriteFrames_q20q0")

@@ -1,3 +1,64 @@
-[gd_scene format=3 uid="uid://tnqncmjv2r6i"]
+[gd_scene load_steps=7 format=3 uid="uid://tnqncmjv2r6i"]
+
+[ext_resource type="Texture2D" uid="uid://dr5yf4oc48adi" path="res://asset/2dcitywithoutoutline/2dcitywithoutoutline/citysecondprops/citysecondcityprops0001.png" id="1_ufclk"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_d0q6k"]
+vertices = PackedVector2Array(-78, -129, 154, -134, 3, 64, -118, -63, -310, 144, -323, 8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-78.1151, -128.512, -118.433, -62.9961, -322.54, 7.55952, -309.941, 143.631, 2.51987, 64, 153.71, -133.552)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8rnfh"]
+vertices = PackedVector2Array(137, -3, 141, 123, -92, 124, -92, -4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-91.9239, -4.24263, -91.9239, 124.451, 141.421, 123.037, 137.179, -2.82843)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_t2yre"]
+vertices = PackedVector2Array(-85, -94, -85, -132, 130, -128, 146, -81, 135, 43, 263, -76, 263, 36, -101, 43, -204, 25, -198, -81, -85, 112, 121, 108)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 5, 6, 4), PackedInt32Array(7, 8, 9, 0, 4), PackedInt32Array(10, 7, 4, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-197.553, -80.8173, -204.288, 24.6942, -101.022, 42.6535, -85.3071, 112.246, 121.226, 107.756, 134.695, 42.6535, 262.656, 35.9188, 262.656, -76.3274, 145.92, -80.8172, 130.206, -127.961, -85.3071, -132.451, -85.3071, -94.2868)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osr3r"]
+texture = ExtResource("1_ufclk")
+texture_region_size = Vector2i(128, 128)
+6:9/size_in_atlas = Vector2i(4, 2)
+6:9/0 = 0
+6:9/0/texture_origin = Vector2i(-24, 0)
+6:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_t2yre")
+6:5/size_in_atlas = Vector2i(4, 3)
+6:5/0 = 0
+12:9/size_in_atlas = Vector2i(3, 2)
+12:9/next_alternative_id = 2
+12:9/0 = 0
+12:9/0/texture_origin = Vector2i(-27, -65)
+12:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8rnfh")
+12:9/1 = 1
+12:9/1/transpose = true
+10:12/size_in_atlas = Vector2i(5, 3)
+10:12/0 = 0
+10:12/0/texture_origin = Vector2i(92, 10)
+10:12/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_d0q6k")
+3:12/size_in_atlas = Vector2i(5, 3)
+3:12/0 = 0
+3:12/0/texture_origin = Vector2i(75, 0)
+
+[sub_resource type="TileSet" id="TileSet_qm5lk"]
+tile_size = Vector2i(128, 128)
+navigation_layer_0/layers = 1
+sources/1 = SubResource("TileSetAtlasSource_osr3r")
 
 [node name="gamescene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_qm5lk")
+navigation_visibility_mode = 1
+format = 2
+layer_0/name = "ground"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(0, 786433, 9, 65536, 786433, 9, 131072, 786433, 9, 196608, 786433, 9, 262144, 393217, 5, 327680, 393217, 9, 458752, 786433, 9, 524288, 786433, 9, 393216, 786433, 9, 655360, 655361, 12, 327683, 786433, 65545, 327684, 786433, 65545, 327685, 786433, 65545, 327686, 786433, 65545, 327687, 786433, 65545, 327688, 786433, 65545, 327689, 786433, 65545)
