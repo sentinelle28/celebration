@@ -1,13 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://tnqncmjv2r6i"]
+[gd_scene load_steps=13 format=3 uid="uid://tnqncmjv2r6i"]
 
+[ext_resource type="Texture2D" uid="uid://73gvxbw5yoqf" path="res://asset/2dcitywithoutoutline/2dcitywithoutoutline/citysecondprops/citysecondcityprops0003.png" id="1_llvsh"]
 [ext_resource type="Texture2D" uid="uid://dr5yf4oc48adi" path="res://asset/2dcitywithoutoutline/2dcitywithoutoutline/citysecondprops/citysecondcityprops0001.png" id="1_ufclk"]
+[ext_resource type="Texture2D" uid="uid://grfywa0muawf" path="res://asset/2dcitywithoutoutline/2dcitywithoutoutline/cityfirstprops/1.png" id="3_yyy18"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_d0q6k"]
-vertices = PackedVector2Array(-78, -129, 154, -134, 3, 64, -118, -63, -310, 144, -323, 8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-78.1151, -128.512, -118.433, -62.9961, -322.54, 7.55952, -309.941, 143.631, 2.51987, 64, 153.71, -133.552)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_akbim"]
+vertices = PackedVector2Array(135, -94, 132, 38, -123, 40, -121, -96)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(134.929, -93.6567, 131.754, 38.0976, -123.472, 40.3175, -120.952, -95.754)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_a3vmv"]
+vertices = PackedVector2Array(52, -100, 64, 44, -152, 38, -144, -106)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(52, -100, 64, 44, -152, 38, -144, -106)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7sd4"]
+texture = ExtResource("1_llvsh")
+texture_region_size = Vector2i(128, 128)
+12:9/size_in_atlas = Vector2i(3, 2)
+12:9/next_alternative_id = 2
+12:9/0 = 0
+12:9/0/texture_origin = Vector2i(0, -5)
+12:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_akbim")
+12:9/1 = 1
+12:9/1/navigation_layer_0/polygon = SubResource("NavigationPolygon_a3vmv")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8rnfh"]
 vertices = PackedVector2Array(137, -3, 141, 123, -92, 124, -92, -4)
@@ -16,10 +36,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-91.9239, -4.24263, -91
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_t2yre"]
-vertices = PackedVector2Array(-85, -94, -85, -132, 130, -128, 146, -81, 135, 43, 263, -76, 263, 36, -101, 43, -204, 25, -198, -81, -85, 112, 121, 108)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 5, 6, 4), PackedInt32Array(7, 8, 9, 0, 4), PackedInt32Array(10, 7, 4, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-197.553, -80.8173, -204.288, 24.6942, -101.022, 42.6535, -85.3071, 112.246, 121.226, 107.756, 134.695, 42.6535, 262.656, 35.9188, 262.656, -76.3274, 145.92, -80.8172, 130.206, -127.961, -85.3071, -132.451, -85.3071, -94.2868)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wm8d5"]
+vertices = PackedVector2Array(137, -83, -90, 38, -123, 40, -123, -85, -85, -94, 130, -128, -85, -132, 135, 43, 121, 108, -85, 112)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 5), PackedInt32Array(1, 0, 7, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-123.471, -85.3071, -123.471, 40.4086, -89.797, 38.1637, -85.3071, 112.246, 121.226, 107.756, 134.695, 42.6535, 136.94, -83.0622, 130.206, -127.961, -85.3071, -132.451, -85.3071, -94.2868)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
@@ -29,36 +49,54 @@ texture_region_size = Vector2i(128, 128)
 6:9/size_in_atlas = Vector2i(4, 2)
 6:9/0 = 0
 6:9/0/texture_origin = Vector2i(-24, 0)
-6:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_t2yre")
-6:5/size_in_atlas = Vector2i(4, 3)
-6:5/0 = 0
+6:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_wm8d5")
 12:9/size_in_atlas = Vector2i(3, 2)
 12:9/next_alternative_id = 2
 12:9/0 = 0
 12:9/0/texture_origin = Vector2i(-27, -65)
 12:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8rnfh")
-12:9/1 = 1
-12:9/1/transpose = true
-10:12/size_in_atlas = Vector2i(5, 3)
-10:12/0 = 0
-10:12/0/texture_origin = Vector2i(92, 10)
-10:12/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_d0q6k")
-3:12/size_in_atlas = Vector2i(5, 3)
-3:12/0 = 0
-3:12/0/texture_origin = Vector2i(75, 0)
 
 [sub_resource type="TileSet" id="TileSet_qm5lk"]
 tile_size = Vector2i(128, 128)
 navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_osr3r")
+sources/0 = SubResource("TileSetAtlasSource_a7sd4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j20qk"]
+texture = ExtResource("3_yyy18")
+texture_region_size = Vector2i(128, 128)
+6:12/size_in_atlas = Vector2i(2, 4)
+6:12/0 = 0
+8:12/size_in_atlas = Vector2i(2, 4)
+8:12/0 = 0
+10:12/size_in_atlas = Vector2i(1, 4)
+10:12/0 = 0
+11:12/size_in_atlas = Vector2i(3, 4)
+11:12/0 = 0
+2:5/size_in_atlas = Vector2i(3, 2)
+2:5/0 = 0
+5:5/size_in_atlas = Vector2i(2, 2)
+5:5/0 = 0
+14:7/size_in_atlas = Vector2i(2, 3)
+14:7/0 = 0
+1:10/size_in_atlas = Vector2i(1, 2)
+1:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6pi7q"]
+tile_size = Vector2i(128, 128)
+sources/2 = SubResource("TileSetAtlasSource_j20qk")
 
 [node name="gamescene" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="road" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_qm5lk")
 navigation_visibility_mode = 1
 format = 2
 layer_0/name = "ground"
 layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(0, 786433, 9, 65536, 786433, 9, 131072, 786433, 9, 196608, 786433, 9, 262144, 393217, 5, 327680, 393217, 9, 458752, 786433, 9, 524288, 786433, 9, 393216, 786433, 9, 655360, 655361, 12, 327683, 786433, 65545, 327684, 786433, 65545, 327685, 786433, 65545, 327686, 786433, 65545, 327687, 786433, 65545, 327688, 786433, 65545, 327689, 786433, 65545)
+layer_0/tile_data = PackedInt32Array(327680, 393217, 9, 458752, 786433, 9, 524288, 786433, 9, 393216, 786433, 9, 589824, 786433, 9, 655360, 786433, 9, 393214, 786432, 9, 393212, 786432, 9, 393210, 786432, 9, 196608, 786433, 9, 131072, 786433, 9, 65536, 786433, 9, 0, 786433, 9, 327682, 786432, 9, 327684, 786432, 9, 327686, 786432, 9, 327688, 786432, 9, 327690, 393217, 9, 393226, 786433, 9, 458762, 786433, 9, 524298, 786433, 9, 589834, 786433, 9, 655370, 786433, 9, 196618, 786433, 9, 131082, 786433, 9, 65546, 786433, 9, 10, 786433, 9, 327692, 786432, 9, 327694, 786432, 9, 327696, 786432, 9, 1114106, 786432, 9, 1114108, 786432, 9, 1114110, 786432, 9, 720896, 786433, 9, 786432, 786433, 9, 851968, 786433, 9, 917504, 786433, 9, 1048576, 393217, 9, 1114112, 786433, 9, 1179648, 786433, 9, 1245184, 786433, 9, 1310720, 786433, 9, 1376256, 786433, 9, 1048578, 786432, 9, 1048580, 786432, 9, 1048582, 786432, 9, 1048584, 786432, 9, 720906, 786433, 9, 786442, 786433, 9, 851978, 786433, 9, 917514, 786433, 9, 1048586, 393217, 9, 1114122, 786433, 9, 1179658, 786433, 9, 1245194, 786433, 9, 1310730, 786433, 9, 1376266, 786433, 9, 1048588, 786432, 9, 1048590, 786432, 9, 1048592, 786432, 9, 1048594, 786432, 9, 1048596, 786432, 9, 1048598, 786432, 9, 720920, 786433, 9, 786456, 786433, 9, 851992, 786433, 9, 917528, 786433, 9, 1048600, 393217, 9, 1114136, 786433, 9, 1179672, 786433, 9, 1245208, 786433, 9, 1310744, 786433, 9, 1376280, 786433, 9, 1048602, 786432, 9, 1048604, 786432, 9, 1048606, 786432, 9, 1048608, 786432, 9, 720930, 786433, 9, 786466, 786433, 9, 852002, 786433, 9, 917538, 786433, 9, 1048610, 393217, 9, 1114146, 786433, 9, 1179682, 786433, 9, 1245218, 786433, 9, 1310754, 786433, 9, 1376290, 786433, 9, 1048612, 786432, 9, 1048614, 786432, 9, 1048616, 786432, 9, 327698, 786432, 9, 327700, 786432, 9, 327702, 786432, 9, 24, 786433, 9, 65560, 786433, 9, 131096, 786433, 9, 196632, 786433, 9, 327704, 393217, 9, 393240, 786433, 9, 458776, 786433, 9, 524312, 786433, 9, 589848, 786433, 9, 655384, 786433, 9, 327706, 786432, 9, 327708, 786432, 9, 327710, 786432, 9, 327712, 786432, 9, 34, 786433, 9, 65570, 786433, 9, 131106, 786433, 9, 196642, 786433, 9, 327714, 393217, 9, 393250, 786433, 9, 458786, 786433, 9, 524322, 786433, 9, 589858, 786433, 9, 655394, 786433, 9, 327716, 786432, 9, 327718, 786432, 9, 327720, 786432, 9, -327686, 786432, 9, -327684, 786432, 9, -327682, 786432, 9, -720896, 786433, 9, -655360, 786433, 9, -589824, 786433, 9, -524288, 786433, 9, -393216, 393217, 9, -327680, 786433, 9, -262144, 786433, 9, -196608, 786433, 9, -131072, 786433, 9, -65536, 786433, 9, -393214, 786432, 9, -393212, 786432, 9, -393210, 786432, 9, -393208, 786432, 9, -720886, 786433, 9, -655350, 786433, 9, -589814, 786433, 9, -524278, 786433, 9, -393206, 393217, 9, -327670, 786433, 9, -262134, 786433, 9, -196598, 786433, 9, -131062, 786433, 9, -65526, 786433, 9, -393204, 786432, 9, -393202, 786432, 9, -393200, 786432, 9, -393198, 786432, 9, -393196, 786432, 9, -393194, 786432, 9, -720872, 786433, 9, -655336, 786433, 9, -589800, 786433, 9, -524264, 786433, 9, -393192, 393217, 9, -327656, 786433, 9, -262120, 786433, 9, -196584, 786433, 9, -131048, 786433, 9, -65512, 786433, 9, -393190, 786432, 9, -393188, 786432, 9, -393186, 786432, 9, -393184, 786432, 9, -720862, 786433, 9, -655326, 786433, 9, -589790, 786433, 9, -524254, 786433, 9, -393182, 393217, 9, -327646, 786433, 9, -262110, 786433, 9, -196574, 786433, 9, -131038, 786433, 9, -65502, 786433, 9, -393180, 786432, 9, -393178, 786432, 9, -393176, 786432, 9)
+
+[node name="deco" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_6pi7q")
+format = 2
